@@ -9,19 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="icon" href="../../favicon.ico">
-
     <title>Be part of bizagi</title>
     <!-- Bootstrap core CSS -->
     <link href="css/normalize.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link rel="stylesheet" href="css/main.css">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
-    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
-    <script src="../../assets/js/ie-emulation-modes-warning.js"></script>
-    <!--[if lt IE 9]>
-		<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-	<![endif]-->
 </head>
 
 <body>
@@ -39,7 +32,7 @@
     </header>
 
     <section class="main-section">
-        <form class="bz-form">
+        <form class="bz-form" id="register">
             <div class="bz-form__element">
                 <label class="bz-label" for="name">Your name</label>
                 <input class="bz-input" type="text" name="Your Name" placeholder="">
@@ -53,11 +46,12 @@
                 <input class="bz-input" type="url" name="Linked in profile URL" placeholder="https://www.linkedin.com/yourProfile/">
             </div>
             <div class="bz-form__element">
-                <button class="bz-button">Upload your CV</button>
+                <label class="bz-label" for="about">About you</label>
+                <textarea class="bz-input" type="text" name="about" placeholder="Tell us about your profile"></textarea>
             </div>
             <div class="bz-form__element">
                 <label class="bz-label" for="code">Insert your code</label>
-                <input class="bz-input bz-input--code" type="text" placeholder="">
+                <input id="code" class="bz-input bz-input--code" type="text" placeholder="">
             </div>
             <div class="bz-form__element bz-form__element--center">
                 <label class="bz-check">
@@ -70,8 +64,23 @@
     </section>
 
     <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>    
     <script src="js/vendor/particles.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyDKNmaYFOoCg9Fr8_a2obp57LpgUvrpH_c",
+            authDomain: "bizagiraffle.firebaseapp.com",
+            databaseURL: "https://bizagiraffle.firebaseio.com",
+            projectId: "bizagiraffle",
+            storageBucket: "bizagiraffle.appspot.com",
+            messagingSenderId: "288333893686"
+        };
+        firebase.initializeApp(config);
+    </script>
     <script src="js/main.js"></script>
+    <script src="js/form.js"></script>
 </body>
 
 </html>
